@@ -11,6 +11,7 @@
 #include"MyStack.h"
 #include"MyPoint.h"
 #include "MyMD5.h"
+#include<regex>
 
 using namespace std;
 
@@ -449,9 +450,14 @@ int main()
 	for(int i =0 ; i < len1+len2; i++)
 		cout << arr1[i] << " ";
 	cout<<endl;
-*/
+
 	const char* c_str = "123456";
 	cout<<CMD5(c_str).toString()<<endl;
+	*/
+
+	const std::regex pattern("111|123|abc");
+	cout<<c_str<<" : "<<std::regex_search(c_str, pattern)<<endl;
+
 	system("pause");
 	return 0;
 }
