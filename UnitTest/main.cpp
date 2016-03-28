@@ -436,8 +436,8 @@ int main()
 	int day = sum/(24*3600*100);
 	cout<<"day : "<<day<<endl;
 	*/
-
-/*
+	
+	/*
 	int arr1[1024] = {1,2,3,4,10,12,15,19};  
 	int arr2[] = {5,6,7,8,11,13,14,21};
 	int len1 = 0;
@@ -450,10 +450,10 @@ int main()
 	for(int i =0 ; i < len1+len2; i++)
 		cout << arr1[i] << " ";
 	cout<<endl;
+	*/
 
 	const char* c_str = "123456";
 	cout<<CMD5(c_str).toString()<<endl;
-	*/
 
 	const std::regex pattern("111|123|abc");
 	cout<<c_str<<" : "<<std::regex_search(c_str, pattern)<<endl;

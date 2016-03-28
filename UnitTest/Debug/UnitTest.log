@@ -1,0 +1,35 @@
+﻿生成启动时间为 2016/3/28 11:15:29。
+     1>项目“F:\git\TestCpp\UnitTest\UnitTest.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\VS\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Clock.cpp Date.cpp main.cpp MyMD5.cpp MyPoint.cpp MyStack.cpp MyString.cpp Singleton.cpp StrUtils.cpp Test.cpp Utility.cpp
+         Utility.cpp
+         Test.cpp
+         StrUtils.cpp
+         Singleton.cpp
+         MyString.cpp
+         MyStack.cpp
+         MyPoint.cpp
+         MyMD5.cpp
+     1>f:\git\testcpp\unittest\mymd5.cpp(135): warning C4244: “参数”: 从“std::streamsize”转换到“size_t”，可能丢失数据
+         main.cpp
+         Date.cpp
+         Clock.cpp
+         正在生成代码...
+       Link:
+         E:\VS\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\git\TestCpp\Debug\UnitTest.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\git\TestCpp\Debug\UnitTest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\git\TestCpp\Debug\UnitTest.lib" /MACHINE:X86 Debug\Clock.obj
+         Debug\Date.obj
+         Debug\main.obj
+         Debug\MyMD5.obj
+         Debug\MyPoint.obj
+         Debug\MyStack.obj
+         Debug\MyString.obj
+         Debug\Singleton.obj
+         Debug\StrUtils.obj
+         Debug\Test.obj
+         Debug\Utility.obj
+         UnitTest.vcxproj -> F:\git\TestCpp\Debug\UnitTest.exe
+     1>已完成生成项目“F:\git\TestCpp\UnitTest\UnitTest.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.57
