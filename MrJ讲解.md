@@ -897,20 +897,20 @@ friend ostream & operator <<(ostream &os,const MyString& d);
 friend istream & operator >>(istream &is, MyString& d);
 
 
-第二十五讲
+#第二十五讲
 
-类型转换运算符重载
+##类型转换运算符重载
 必须是成员函数 不能是友元函数
 没有参数(类自身)
 不能指定返回值(需要转换的类型)
 函数原型 operator 类型名();
 
-指针运算符 
+##指针运算符 
 利用类对象的确定性析构实现智能指针
 使用智能指针避免内存泄露
 函数原型  Test* operator->();
 
-operator new
+##operator new
 三种用法:
 new operator
 等价于 operator new + 构造函数的调用
@@ -921,8 +921,8 @@ placement new
 char tmp[10];
 Test* t = new(tmp) Test(); //这里new不分配内存 就在tmp内存上构造对象
 
-operator delete 释放内存
+##operator delete 释放内存
 不能带参数 
 
-__FILE__ 代码文件名(带绝对路径的)
-__LINE__ 代码文件行号
+* __FILE__ 代码文件名(带绝对路径的)
+* __LINE__ 代码文件行号
