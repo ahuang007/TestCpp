@@ -864,11 +864,12 @@ MyString str = "1111";
 MyString& operator=(const MyString& other);//赋值运算符函数（对象）
 MyString& operator=(const char* str);//赋值运算符函数（字符串）
 
-第二十四讲
+#第二十四讲
 
-[]运算符重载【成员函数】
+##[]运算符重载【成员函数】
 返回引用可以出现在=运算符的左边
 如果是const对象 则不能赋值 需要重载一个const的[]运算符
+```c++
 char& operator[](unsigned int index)
 {
 	return const_cast<char&>(static_cast<const MyString&>(*this)[index]);
@@ -877,25 +878,33 @@ const char& operator[](unsigned int index) const
 {
 	reurn m_str[index];
 }
+```
 nonconst版本调用const版本(用强制类型转换)
 
 
-二元运算符推荐用友元的方式重载
+##二元运算符推荐用友元的方式重载
 +运算符重载【友元】
+```c++
 friend MyString operator+(const MyString& str1, const MyString& str2);
+```
 
 +=运算符重载【成员函数】
+```c++
 MyString& operator+=(const MyString& str);
+```
 
 流操作 用友元的方式重载 <<s1<<s2<<s3;
 第一个参数必须是流对象
 返回值必须是流对象引用
 <<运算符重载(cout是ostream的一个对象)
+```c++
 friend ostream & operator <<(ostream &os,const MyString& d);
+```
 
 >>运算符重载(cin是istream的一个对象)
+```c++
 friend istream & operator >>(istream &is, MyString& d);
-
+```
 
 #第二十五讲
 
