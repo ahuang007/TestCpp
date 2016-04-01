@@ -842,27 +842,37 @@ friend Test& operator+(const Test& t1, const Test& t2);
 流运算符只能以友元方式重载
 
 
-第二十三讲
+#第二十三讲
 
-++运算符重载【推荐用成员函数的方式重载】
+##++运算符重载【推荐用成员函数的方式重载】
 前置++
+```c++
 Test& operator++();
+```
 后置++(利用临时变量)
+```c++
 const Test operator++(int);
+```
 后置运算符比前置运算符多一个参数 用来重载
 
-！运算符重载
+##！运算符重载
+```c++
 bool operator!(String& str) const
 {
 	return strlen(str.m_str) == 0;
 }
+```
 
-赋值运算符重载
+##赋值运算符重载
+```c++
 MyString str = "1111";
+```
 //(重载前) 1 调用转换构造函数 2 调用赋值运算符
 字符串类重载2个赋值运算符
+```c++
 MyString& operator=(const MyString& other);//赋值运算符函数（对象）
 MyString& operator=(const char* str);//赋值运算符函数（字符串）
+```
 
 #第二十四讲
 
@@ -927,8 +937,10 @@ operator new
 分配内存
 placement new
 在已经存在的内存上构造对象
+```c++
 char tmp[10];
 Test* t = new(tmp) Test(); //这里new不分配内存 就在tmp内存上构造对象
+```
 
 ##operator delete 释放内存
 不能带参数 
