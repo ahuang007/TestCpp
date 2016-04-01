@@ -168,38 +168,38 @@
 * 提高程序的执行效率
 * 不涉及函数调用的开销 由编译器展开
 * 什么时候用内联函数？
-	** 函数体小
-	** 函数调用频繁
+** 函数体小
+** 函数调用频繁
 
 ###内联函数与带参数宏的区别
-	* 内联函数进行类型检查	
-	* 内联函数会对实参进行求值,然后传递给形参 宏只是简单的替换
-	* 内联函数在编译期将函数展开 宏定义在预处理的时候展开
+* 内联函数进行类型检查	
+* 内联函数会对实参进行求值,然后传递给形参 宏只是简单的替换
+* 内联函数在编译期将函数展开 宏定义在预处理的时候展开
 
 ##宏
-	* 1 常量			
-	【c++高层次编程推荐】const enum
-	* 2 带参数宏
-	【c++高层次编程推荐】	inline
+* 1 常量			
+【c++高层次编程推荐】const enum
+* 2 带参数宏
+【c++高层次编程推荐】	inline
 
 ##新的类型转换运算符
 ###旧式转型
-* 	(T)expr
-* 	T(expr)
+* (T)expr
+* T(expr)
 ###新的转型
-* 	const_cast<T>(expr)
+* const_cast<T>(expr)
 		用来移除对象的常量性 
 		一般用于常量指针或者引用
 		去除常量性不是为了修改所指向的内容 仅仅是为了函数能接受这个实际参数
-* 	static_cast<T>(expr)
+* static_cast<T>(expr)
 		编译器执行的任何隐式转换都可以用static_cast
 		高精度的类型向低精度的类型转换的时候都能用static_cast
 		可以将无类型指针转换成某一类型的指针
 		可以将基类指针转成派生类指针
 		无法将const转换成nonconst 只能由const_cast转换
-* 	reinterpret_cast<T>(expr) 【慎用】
+* reinterpret_cast<T>(expr) 【慎用】
 		为操作数的位模式提供较低层的重新解释 也就是说将数据以二进制的形式重新解释
-* 	dynamic_cast<T>(expr)
+* dynamic_cast<T>(expr)
 		做一个向下的类型安全转换
 		不能用旧式类型转换
 ###隐式转换
@@ -911,9 +911,8 @@ const char& operator[](unsigned int index) const
 {
 	reurn m_str[index];
 }
+//nonconst版本调用const版本(用强制类型转换)
 ```
-nonconst版本调用const版本(用强制类型转换)
-
 
 ##二元运算符推荐用友元的方式重载
 +运算符重载【友元】
@@ -926,15 +925,17 @@ friend MyString operator+(const MyString& str1, const MyString& str2);
 MyString& operator+=(const MyString& str);
 ```
 
-流操作 用友元的方式重载 <<s1<<s2<<s3;
-第一个参数必须是流对象
-返回值必须是流对象引用
-<<运算符重载(cout是ostream的一个对象)
+* 流操作 用友元的方式重载 <<s1<<s2<<s3;
+* 第一个参数必须是流对象
+* 返回值必须是流对象引用
+* <<运算符重载(cout是ostream的一个对象)
+
 ```c++
 friend ostream & operator <<(ostream &os,const MyString& d);
 ```
 
->>运算符重载(cin是istream的一个对象)
+* >>运算符重载(cin是istream的一个对象)
+
 ```c++
 friend istream & operator >>(istream &is, MyString& d);
 ```
@@ -942,31 +943,30 @@ friend istream & operator >>(istream &is, MyString& d);
 #第二十五讲
 
 ##类型转换运算符重载
-必须是成员函数 不能是友元函数
-没有参数(类自身)
-不能指定返回值(需要转换的类型)
-函数原型 operator 类型名();
+* 必须是成员函数 不能是友元函数
+* 没有参数(类自身)
+* 不能指定返回值(需要转换的类型)
+* 函数原型 operator 类型名();
 
 ##指针运算符 
-利用类对象的确定性析构实现智能指针
-使用智能指针避免内存泄露
-函数原型  Test* operator->();
+* 利用类对象的确定性析构实现智能指针
+* 使用智能指针避免内存泄露
+* 函数原型  Test* operator->();
 
-##operator new
-三种用法:
-new operator
-等价于 operator new + 构造函数的调用
-operator new
-分配内存
-placement new
-在已经存在的内存上构造对象
+##operator new 三种用法:
+* 1 new operator 等价于 operator new + 构造函数的调用
+* 2 operator new 分配内存
+* 3 placement new 在已经存在的内存上构造对象
+
 ```c++
 char tmp[10];
 Test* t = new(tmp) Test(); //这里new不分配内存 就在tmp内存上构造对象
 ```
 
-##operator delete 释放内存
-不能带参数 
+##operator delete 
+* 释放内存
+* 不能带参数 
 
+##打印代码位置
 * __FILE__ 代码文件名(带绝对路径的)
 * __LINE__ 代码文件行号
