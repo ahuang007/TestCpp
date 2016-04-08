@@ -1,5 +1,7 @@
 # [Mr.J讲解C++课堂](http://www.cppcourse.com/freelist)
 
+[TOC]
+
 #第一讲
 
 ##c++的优势
