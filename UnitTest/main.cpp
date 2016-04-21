@@ -143,6 +143,8 @@ int getPower(int a, int b, int (*p)(int, int))
 }
 
 
+
+
 //全局operator new, operator delete 
 /*
 void* operator new(size_t size)
@@ -171,6 +173,10 @@ void operator delete[](void *p)
 	free(p);
 }
 */
+
+void print(string str){
+	cout << str << endl;
+}
 
 int main()
 {
@@ -451,12 +457,32 @@ int main()
 		cout << arr1[i] << " ";
 	cout<<endl;
 	*/
-
+	
+	/*
 	const char* c_str = "123456";
 	cout<<CMD5(c_str).toString()<<endl;
 
 	const std::regex pattern("111|123|abc");
 	cout<<c_str<<" : "<<std::regex_search(c_str, pattern)<<endl;
+	*/
+
+//c++11 用法
+	auto index = 10;
+	cout << ++index<< endl;
+
+	auto ptr = [](int a, int b) {
+		return a + b;
+	};
+	cout << ptr(3, 5) << endl;
+	
+	vector<int> vecTemp = {};
+	vecTemp.push_back(2);
+	vecTemp.push_back(3);
+	for_each(vecTemp.begin(), vecTemp.end(), [](int v){cout << v << endl; });
+	
+	//原来函数指针的用法
+	auto func = &print; 
+	(*func)("aaa"); 
 
 	system("pause");
 	return 0;
