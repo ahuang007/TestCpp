@@ -12,6 +12,7 @@
 #include"MyPoint.h"
 #include "MyMD5.h"
 #include<regex>
+#include<vector>
 
 using namespace std;
 
@@ -475,7 +476,7 @@ int main()
 	};
 	cout << ptr(3, 5) << endl;
 	
-	vector<int> vecTemp = {};
+	vector<int> vecTemp;
 	vecTemp.push_back(2);
 	vecTemp.push_back(3);
 	for_each(vecTemp.begin(), vecTemp.end(), [](int v){cout << v << endl; });
