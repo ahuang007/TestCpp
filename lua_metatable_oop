@@ -132,4 +132,41 @@ t=son_type.new(6) -- base_type ctor \n son_type ctor
 t:print_x() -- 6
 t:hello() -- hello son_type
 
+--rawget是为了绕过__index而出现的，直接点，就是让__index方法的重写无效
+Window = {}  
+  
+Window.prototype = {x = 0 ,y = 0 ,width = 100 ,height = 100,}  
+Window.mt = {}  
+function Window.new(o)  
+    setmetatable(o ,Window.mt)  
+    return o  
+end  
+Window.mt.__index = function (t ,key)  
+    return 1000  
+end  
+Window.mt.__newindex = function (table ,key ,value)  
+    if key == "wangbin" then  
+        rawset(table ,"wangbin" ,"yes,i am")  
+    end  
+end  
+w = Window.new{x = 10 ,y = 20}  
+print(rawget(w ,w.wangbin))  
 
+打印结果是:nil。这里的元表中__index函数就不再起作用了
+
+Window = {}  
+Window.prototype = {x = 0 ,y = 0 ,width = 100 ,height = 100,}  
+Window.mt = {}  
+function Window.new(o)  
+    setmetatable(o ,Window.mt)  
+    return o  
+end  
+Window.mt.__index = function (t ,key)  
+    return 1000  
+end  
+Window.mt.__newindex = function (table ,key ,value)  
+    table.key = "yes,i am"  
+end  
+w = Window.new{x = 10 ,y = 20}  
+w.wangbin = "55"  
+程序陷入了死循环。因为w.wangbin这个元素本来就不存在表中，然后这里不断执行进入__newindex，陷入了死循环。
