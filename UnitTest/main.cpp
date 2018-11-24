@@ -468,6 +468,7 @@ int main()
 	*/
 
 //c++11 用法
+/*
 	auto index = 10;
 	cout << ++index<< endl;
 
@@ -482,8 +483,26 @@ int main()
 	for_each(vecTemp.begin(), vecTemp.end(), [](int v){cout << v << endl; });
 	
 	//原来函数指针的用法
-	auto func = &print; 
+	auto func = &printf; 
 	(*func)("aaa"); 
+*/
+
+//桶排序
+	int book[1001];
+	for(int i = 0; i <= 1000; i++){
+		book[i] = 0;
+	}
+	int arr[] = { 101, 105, 103, 101, 110, 109, 99, 1, 999, 666, 888, 777, 999, 9, 99, 88, 199 };
+	int size = int(sizeof(arr) / sizeof(int));
+	for (int i = 0; i < size; i++){
+		book[arr[i]]++;
+	}
+	for (int i = 0; i <= 1000; i++){
+		for (int j = 0; j < book[i]; j++){
+			cout << i << " "; 
+		}
+	}
+	cout << endl;
 
 	system("pause");
 	return 0;

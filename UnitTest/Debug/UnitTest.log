@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿生成启动时间为 2018/11/4 16:11:06。
      1>项目“C:\Users\huanglj\Desktop\TestCpp\UnitTest\UnitTest.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
@@ -11,12 +12,19 @@
          MyPoint.cpp
          MyMD5.cpp
      1>c:\users\huanglj\desktop\testcpp\unittest\mymd5.cpp(135): warning C4244: “参数”: 从“std::streamsize”转换到“size_t”，可能丢失数据
+=======
+﻿生成启动时间为 2016/5/12 10:33:27。
+     1>项目“F:\git\TestCpp\UnitTest\UnitTest.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         F:\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+>>>>>>> 354f11e0c7ca3fdea3fe4a3c4588024eee70da82
          main.cpp
-         Date.cpp
-         Clock.cpp
-         正在生成代码...
        Link:
+<<<<<<< HEAD
          D:\vs2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\huanglj\Desktop\TestCpp\Debug\UnitTest.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\huanglj\Desktop\TestCpp\Debug\UnitTest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\huanglj\Desktop\TestCpp\Debug\UnitTest.lib" /MACHINE:X86 Debug\Clock.obj
+=======
+         F:\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\git\TestCpp\Debug\UnitTest.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\git\TestCpp\Debug\UnitTest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\git\TestCpp\Debug\UnitTest.lib" /MACHINE:X86 Debug\Clock.obj
+>>>>>>> 354f11e0c7ca3fdea3fe4a3c4588024eee70da82
          Debug\Date.obj
          Debug\main.obj
          Debug\MyMD5.obj
@@ -27,9 +35,18 @@
          Debug\StrUtils.obj
          Debug\Test.obj
          Debug\Utility.obj
+<<<<<<< HEAD
          UnitTest.vcxproj -> C:\Users\huanglj\Desktop\TestCpp\Debug\UnitTest.exe
      1>已完成生成项目“C:\Users\huanglj\Desktop\TestCpp\UnitTest\UnitTest.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
 已用时间 00:00:22.30
+=======
+         UnitTest.vcxproj -> F:\git\TestCpp\Debug\UnitTest.exe
+     1>已完成生成项目“F:\git\TestCpp\UnitTest\UnitTest.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.19
+>>>>>>> 354f11e0c7ca3fdea3fe4a3c4588024eee70da82
