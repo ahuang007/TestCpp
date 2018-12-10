@@ -1,10 +1,10 @@
 */Debug
 Debug/*
 *.opensdf
+*.sln
 *.suo
 *.vcxproj
 *.vcxproj.filters
-*.sln
 *.exe
 *.ilk
 *.pdb
