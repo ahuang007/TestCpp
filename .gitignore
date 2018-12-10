@@ -4,9 +4,7 @@ Debug/*
 *.sln
 *.suo
 *.vcxproj
-*.vcxproj.filters
+*.filters
 *.exe
 *.ilk
 *.pdb
-/*.suo
-/*.sln
