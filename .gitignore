@@ -8,3 +8,5 @@ Debug/*
 *.exe
 *.ilk
 *.pdb
+/*.suo
+/*.sln
