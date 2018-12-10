@@ -42,6 +42,7 @@ Clock& Clock::operator=(const Clock& c)
 	this->m_hour = c.m_hour;
 	this->m_minute = c.m_minute;
 	this->m_second = c.m_second;
+
 	return *this;
 }
 
