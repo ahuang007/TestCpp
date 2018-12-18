@@ -48,6 +48,11 @@ int main(){
 	int k = 2;
 	int m = 1;
 	a /= SQR(k + m) / SQR(k + m); //a = a/(k+m*k+m/k+m*k+m)= 10/(2+2*1+1/2+2*1+1) = 10/7.5 = 1; // 整数类型转换
+
+	// 如果 只将a类型改为double 则结果为 10/7 = 1.428...
+	// 如果 将a, m ,k 类型都改为double 则结果为 10/7.5 = 1.333...
+	//(注意：int/int结果为int double x = 1/2 结果为0  如果想得到浮点型数据 则可以这么修改 double x = 1*1.0/2)
+
 	b /= SQR1(k + m) / SQR1(k + m); // a = a/1 = 10;
 	cout << "a = " << a << endl;
 	cout << "b = " << b << endl;
