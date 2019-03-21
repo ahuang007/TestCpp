@@ -1,6 +1,8 @@
 
 #include<iostream>
 #include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
 
 using namespace std;
 
@@ -30,6 +32,28 @@ char* myString1(){
 std::endl 除了写'\n'以外 还调用了flush函数，刷新缓冲区，
 把缓冲区里的数据写入文件或者屏幕
 */
+
+class A{
+public:
+	  /*virtual*/ void Func(){
+		cout << "A::Func" << endl;
+	}
+};
+
+void init_str(char** str){
+	*str = (char*)malloc(100);
+	strcpy_s(*str, 100, "hello world");
+}
+
+/*
+void init_str(char* str){
+	str = (char*)malloc(100);
+	strcpy_s(str, 100, "hello world");
+}
+/
+// 以上代码有问题 传值不能被修改 传指针才行
+
+
 int main(){
 	cout << "Hello,World!" << endl;
 
@@ -37,6 +61,14 @@ int main(){
 	char* buf = myString1();
 	printf("buffer2 : %s\n", buf);
 	delete buf; // 要释放 否则有内存泄露
+
+	A* p = NULL; 
+	p->Func(); // 如果Func函数加上virtual关键字 则崩溃 因为没有虚表无法访问到具体的函数
+
+	char* str = NULL;
+	init_str(&str);
+	cout <<"----"<< str  << "+++" << endl;
+	free(str);
 
 	return 0;
 }
