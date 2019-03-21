@@ -50,7 +50,7 @@ void init_str(char* str){
 	str = (char*)malloc(100);
 	strcpy_s(str, 100, "hello world");
 }
-/
+*/
 // 以上代码有问题 传值不能被修改 传指针才行
 
 
@@ -67,8 +67,13 @@ int main(){
 
 	char* str = NULL;
 	init_str(&str);
-	cout <<"----"<< str  << "+++" << endl;
+	cout << "----" << str << "----" << endl;
 	free(str);
+
+	string str1 = "12345678"; // 
+	char *str2 = "12345678"; // 指针4字节
+	char str3[] = "12345678"; // 数组长度 8+\0 = 9
+ 	cout << sizeof(str1) <<"|"<<sizeof(str2)<<"|"<<sizeof(str3)<< endl;
 
 	return 0;
 }
