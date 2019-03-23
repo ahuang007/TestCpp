@@ -13,6 +13,7 @@
 #include "MyMD5.h"
 #include<regex>
 #include<vector>
+#include "Array.h"
 
 using namespace std;
 
@@ -487,7 +488,8 @@ int main()
 	(*func)("aaa"); 
 */
 
-//Õ∞≈≈–Ú
+	//Õ∞≈≈–Ú
+/*
 	int book[1001];
 	for(int i = 0; i <= 1000; i++){
 		book[i] = 0;
@@ -503,6 +505,15 @@ int main()
 		}
 	}
 	cout << endl;
+*/
+
+	Array arr;
+	for (int i = 1; i < 50; i++){
+		arr.push_back(i);
+	}
+	for (int i = 0; i < arr.getSize(); i++){
+		cout << arr.getValue(i) << endl;
+	}
 
 	system("pause");
 	return 0;
