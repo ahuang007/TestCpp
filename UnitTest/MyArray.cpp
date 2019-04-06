@@ -1,6 +1,7 @@
-#include "Array.h"
+#include "MyArray.h"
 
 Array::Array(int sz){
+	cout << "Array Construct ----" << endl;
 	if (sz > 0){
 		m_iSize = 0;
 		m_iMaxSize = sz;
@@ -12,6 +13,7 @@ Array::Array(int sz){
 }
 
 Array::~Array(){
+	cout << "Array DeConstruct ----" << endl;
 	m_iSize = 0;
 	m_iMaxSize = 0;
 	if (m_pData != NULL){

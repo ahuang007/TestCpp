@@ -12,9 +12,9 @@
 #include"MyPoint.h"
 #include "MyMD5.h"
 #include<regex>
-#include<vector>
-#include "Array.h"
-
+//#include<vector>
+#include "MyArray.h"
+#include "MyList.h"
 using namespace std;
 
 #define MAX_LEN 1024
@@ -507,13 +507,29 @@ int main()
 	cout << endl;
 */
 
-	Array arr;
-	for (int i = 1; i < 50; i++){
-		arr.push_back(i);
+/*
+	Array* arr = new Array(8);
+	for (int i = 1; i < 5; i++){
+		arr->push_back(i);
 	}
-	for (int i = 0; i < arr.getSize(); i++){
-		cout << arr.getValue(i) << endl;
+	for (int i = 0; i < arr->getSize(); i++){
+		cout << arr->getValue(i) << endl;
 	}
+	delete arr;
+	*/
+
+	List* list = new List();
+	list->push_back(3);
+	list->push_back(6);
+	list->push_back(9);
+	list->push_front(5);
+	ListNode *pNode = list->m_pHead->next;
+	while (pNode != list->m_pHead){
+		cout << pNode->v << " ";
+		pNode = pNode->next;
+	}
+	cout << endl;
+	delete list;
 
 	system("pause");
 	return 0;
