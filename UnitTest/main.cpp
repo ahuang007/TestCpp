@@ -523,12 +523,12 @@ int main()
 	list->push_back(6);
 	list->push_back(9);
 	list->push_front(5);
-	ListNode *pNode = list->m_pHead->next;
-	while (pNode != list->m_pHead){
-		cout << pNode->v << " ";
-		pNode = pNode->next;
-	}
-	cout << endl;
+	list->PrintList();
+
+	list->remove(6);
+
+	list->PrintList();
+
 	delete list;
 
 	system("pause");

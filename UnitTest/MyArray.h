@@ -59,6 +59,8 @@ public:
 		}
 	}
 
+	// 
+
 private:
 	// 数组元素个数
 	int m_iSize;

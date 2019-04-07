@@ -42,3 +42,25 @@ void List::push_front(int v){
 	pNewNode->prev = m_pHead;
 }
 
+void List::remove(int v){
+	ListNode * pNode = m_pHead->next;
+	while (pNode != m_pHead){
+		ListNode * pTmpNode = pNode->next;
+		if (pNode->v == v){
+			pNode->prev->next = pNode->next;
+			pNode->next->prev = pNode->prev;
+			delete pNode;
+		} 
+		pNode = pTmpNode;
+	}
+}
+
+void List::PrintList(){
+	ListNode *pNode = m_pHead->next;
+	while (pNode != m_pHead){
+		cout << pNode->v << " ";
+		pNode = pNode->next;
+	}
+	cout << endl;
+}
+

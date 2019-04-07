@@ -43,6 +43,11 @@ public:
 	*/
 	void merge(List & l);
 
+	/*
+	@brief 打印链表
+	*/
+	void PrintList();
+
 //private:
 	ListNode *m_pHead; // 双向链表的表头
 };
